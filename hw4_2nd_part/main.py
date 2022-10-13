@@ -63,7 +63,7 @@ def BERT_evaluation():
     # Загрузка посчитанных в Colab эмбеддингов
     answers_embeddings = torch.load(args.answers_embeddings_path, map_location=torch.device('cpu'))
     questions_embeddings = torch.load(args.questions_embeddings_path, map_location=torch.device('cpu'))
-    # Преобразования полученных эмбеддингов к формату денс матриц для дальнейшего вычисления близости
+    # Приведение полученных эмбеддингов к формату денс матриц для дальнейшего вычисления близости
     matrix_answers = compute_index_BERT.computing_index_answers(answers_embeddings)
     matrix_questions = compute_index_BERT.computing_index_questions(questions_embeddings)
     # Подсчёт косинусной близости между матрицами
