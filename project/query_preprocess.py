@@ -5,16 +5,6 @@
 import string
 import nltk
 from pymystem3 import Mystem
-import ssl
-
-# Всё, что следует ниже (до nltk.download(...) невключительно), было добавлено мной, чтобы избежать ошибки,
-# связанной с nltk (насколько помню, именно с загрузкой stopwords), на моём компьютере
-try:
-    _create_unverified_https_context = ssl._create_unverified_context
-except AttributeError:
-    pass
-else:
-    ssl._create_default_https_context = _create_unverified_https_context
 
 nltk.download('stopwords')
 
